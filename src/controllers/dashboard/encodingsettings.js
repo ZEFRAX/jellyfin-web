@@ -19,6 +19,7 @@ define(['jQuery', 'loading', 'globalize', 'dom', 'libraryMenu'], function ($, lo
         page.querySelector('#selectDeinterlaceMethod').value = config.DeinterlaceMethod || '';
         page.querySelector('#chkEnableSubtitleExtraction').checked = config.EnableSubtitleExtraction || false;
         page.querySelector('#chkEnableThrottling').checked = config.EnableThrottling || false;
+        page.querySelector('#chkEnableThrottlingWithHW').checked = config.EnableThrottlingWithHW || false;
         page.querySelector('#selectVideoDecoder').dispatchEvent(new CustomEvent('change', {
             bubbles: true
         }));
@@ -64,6 +65,7 @@ define(['jQuery', 'loading', 'globalize', 'dom', 'libraryMenu'], function ($, lo
                 config.DeinterlaceMethod = form.querySelector('#selectDeinterlaceMethod').value;
                 config.EnableSubtitleExtraction = form.querySelector('#chkEnableSubtitleExtraction').checked;
                 config.EnableThrottling = form.querySelector('#chkEnableThrottling').checked;
+                config.EnableThrottlingWithHW = form.querySelector('#chkEnableThrottlingWithHW').checked;
                 config.HardwareDecodingCodecs = Array.prototype.map.call(Array.prototype.filter.call(form.querySelectorAll('.chkDecodeCodec'), function (c) {
                     return c.checked;
                 }), function (c) {
